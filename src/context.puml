@@ -3,13 +3,18 @@
 
 LAYOUT_WITH_LEGEND()
 
-Person(pbc, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
-System(ibs, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
-System_Ext(es, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-System_Ext(mbs, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+Person(user, "Usuário", "Um usuário que possue a necessidade de enviar o mesmo conteúdo para várias redes sociais.")
+System(pys, "PySocial System", "Sistema cliente que gerencia contas de redes sociais e seus conteúdos digitais.")
+System_Ext(face, "Facebook API", "Interface de comunicação com rede social Facebook.")
+System_Ext(inst, "Instagram API", "Interface de comunicação com rede social Instagram.")
+System_Ext(x, "X (Twiiter) API", "Interface de comunicação com rede social X.")
+System_Ext(tt, "TikTok API", "Interface de comunicação com rede social TikTok.")
+System_Ext(yt, "YouTube API", "Interface de comunicação com rede social YouTube.")
 
-Rel(pbc, ibs, "Uses")
-Rel(es, pbc, "Sends e-mails to")
-Rel(ibs, es, "Sends e-mails", "SMTP")
-Rel(ibs, mbs, "Uses")
+Rel(user, pys, "interage com")
+Rel(pys, face, "intrega a")
+Rel(pys, inst, "intrega a")
+Rel(pys, x, "intrega a")
+Rel(pys, tt, "intrega a")
+Rel(pys, yt, "intrega a")
 @enduml
